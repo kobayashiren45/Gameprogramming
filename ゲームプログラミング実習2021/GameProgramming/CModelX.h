@@ -13,13 +13,24 @@ class CMesh{
 public:
 	int mVertexNum;
 	CVector*mpVertex;
+	int mFaceNum;
+	int *mpVertexIndex;
+	int mNormalNum;
+	CVector *mpNormal;
 	CMesh()
 		:mVertexNum(0)
 		, mpVertex(0)
+		, mFaceNum(0)
+		, mpVertexIndex(nullptr)
+		, mNormalNum(0)
+		, mpNormal(nullptr)
+
 	{}
 
 	~CMesh(){
 		SAFE_DELETE_ARRAY(mpVertex);
+		SAFE_DELETE_ARRAY(mpVertexIndex);
+		SAFE_DELETE_ARRAY(mpNormal);
 	}
 	void Init(CModelX*model);
 

@@ -85,7 +85,59 @@ void CMesh::Init(CModelX*model){
 		printf("%10f\n", mpVertex[i].mZ);
 		
 	}
+	mFaceNum = model->GetIntToken();
+	mpVertexIndex = new int[mFaceNum * 3];
+	printf("FaceNum:%d\n", mFaceNum);
+	for (int i = 0; i < mFaceNum * 3; i += 3){
+		model->GetToken();
+		mpVertexIndex[i] = model->GetIntToken();
+		mpVertexIndex[i+1] = model->GetIntToken();
+		mpVertexIndex[i+2] = model->GetIntToken();
 
+		printf("%3d", mpVertexIndex[i]);
+		printf("%3d", mpVertexIndex[i+1]);
+		printf("%3d\n", mpVertexIndex[i+2]);
+
+	}
+	model->GetToken();
+	if (strcmp(model->mToken, "MeshNormals") == 0){
+		model->GetToken();
+		mNormalNum = model->GetIntToken();
+		CVector*pNormal = new CVector[mNormalNum];
+		
+		for (int i = 0; i < mNormalNum; i++){
+			pNormal[i].mX = model->GetFloatToken();
+			pNormal[i].mY = model->GetFloatToken();
+			pNormal[i].mZ = model->GetFloatToken();
+		
+		}
+		mNormalNum = model->GetIntToken() * 3;
+		int ni;
+		mpNormal = new CVector[mNormalNum];
+		for (int i = 0; i < mNormalNum; i++){
+			model->GetToken();
+			ni = model->GetIntToken();
+			pNormal[i].mX = model->GetFloatToken();
+
+			ni = model->GetIntToken();
+			pNormal[i + 1].mX = model->GetFloatToken();
+
+			ni = model->GetIntToken();
+			pNormal[i + 2].mX = model->GetFloatToken();
+		}
+		delete[] pNormal;
+		model->GetToken();
+
+	}
+#ifdef DEBUG
+	printf("NormalNum:%d\n", mNormalNum);
+	for (int i = 0; i < mNormalNum; i++){
+	
+		printf("%10f", mpNormal[i].mX);
+		printf("%10f", mpNormal[i].mY);
+		printf("%10f\n", mpNormal[i].mZ);
+	}
+#endif
 }
 void CModelX::SkipNode(){
 	while (*mpPointer != '\0'){
