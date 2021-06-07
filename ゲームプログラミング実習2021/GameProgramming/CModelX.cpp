@@ -112,32 +112,37 @@ void CMesh::Init(CModelX*model){
 		
 		}
 		mNormalNum = model->GetIntToken() * 3;
+		
 		int ni;
 		mpNormal = new CVector[mNormalNum];
-		for (int i = 0; i < mNormalNum; i++){
+		for (int i = 0; i < mNormalNum; i+=3){
 			model->GetToken();
 			ni = model->GetIntToken();
-			pNormal[i].mX = model->GetFloatToken();
+			mpNormal[i] = pNormal[ni];
 
 			ni = model->GetIntToken();
-			pNormal[i + 1].mX = model->GetFloatToken();
+			mpNormal[i + 1] = pNormal[ni];
 
 			ni = model->GetIntToken();
-			pNormal[i + 2].mX = model->GetFloatToken();
+			mpNormal[i + 2] = pNormal[ni];
+			
 		}
 		delete[] pNormal;
 		model->GetToken();
 
 	}
-#ifdef DEBUG
+
+#ifdef _DEBUG
 	printf("NormalNum:%d\n", mNormalNum);
-	for (int i = 0; i < mNormalNum; i++){
-	
+	for (int i = 0; i < mNormalNum; i++) {
 		printf("%10f", mpNormal[i].mX);
 		printf("%10f", mpNormal[i].mY);
 		printf("%10f\n", mpNormal[i].mZ);
 	}
 #endif
+
+
+
 }
 void CModelX::SkipNode(){
 	while (*mpPointer != '\0'){
