@@ -195,4 +195,27 @@ CModelXFrame::CModelXFrame(CModelX*model){
 	
 #endif
 }
+void CMesh::Render(){
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glEnableClientState(GL_NORMAL_ARRAY);
 
+	glVertexPointer(3, GL_FLOAT, 0, mpVertex);
+	glNormalPointer(GL_FLOAT, 0, mpNormal);
+
+	glDrawElements(GL_TRIANGLES, 3 * mFaceNum, GL_UNSIGNED_INT, mpVertexIndex);
+	glDisableClientState(GL_VERTEX_ARRAY);
+	glDisableClientState(GL_NORMAL_ARRAY);
+
+
+}
+
+void CModelXFrame::Render(){
+	if (mMesh.mFaceNum != 0)
+		mMesh.Render();
+}
+
+void CModelX::Render(){
+	for (int i = 0; i < mFrame.size(); i++){
+		mFrame[i]->Render();
+	}
+}

@@ -5,6 +5,9 @@
 #include "CUtil.h"
 #include "CRes.h"
 #include "CModelX.h"
+#include "CKey.h"
+
+CMatrix Matrix;
 CSceneGame::~CSceneGame() {
 
 }
@@ -22,7 +25,7 @@ void CSceneGame::Update() {
 	//カメラのパラメータを作成する
 	CVector e, c, u;//視点、注視点、上方向
 	//視点を求める
-	e = CVector(-2.0f, 10.0f, -30.0f);
+	e = CVector(1.0f, 2.0f, 10.0f);
 	//注視点を求める
 	c = CVector();
 	//上方向を求める
@@ -31,6 +34,27 @@ void CSceneGame::Update() {
 	//カメラクラスの設定
 	Camera.Set(e, c, u);
 	Camera.Render();
+
+	if (CKey::Push('K')){
+		Matrix = Matrix*CMatrix().RotateX(1);
+	}
+
+	if (CKey::Push('I')) {
+		Matrix = Matrix * CMatrix().RotateX(-1);
+	}
+
+
+	if (CKey::Push('L')){
+		Matrix = Matrix*CMatrix().RotateY(1);
+	}
+
+	if (CKey::Push('J')) {
+		Matrix = Matrix * CMatrix().RotateY(-1);
+	}
+
+
+	glMultMatrixf(Matrix.mF);
+	CRes::sModelX.Render();
 
 
 	//2D描画開始

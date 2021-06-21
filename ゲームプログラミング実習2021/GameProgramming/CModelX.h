@@ -34,7 +34,7 @@ public:
 	}
 	void Init(CModelX*model);
 
-
+	void Render();
 };
 
 class CModelXFrame{
@@ -53,7 +53,7 @@ public:
 		}
 		SAFE_DELETE_ARRAY(mpName);
 	}
-
+	void Render();
 };
 
 class CModelX{
@@ -75,6 +75,8 @@ public:
 	void Load(char*file);
 	void GetToken();
 	void SkipNode();
+
+	void Render();
 };
 
 
