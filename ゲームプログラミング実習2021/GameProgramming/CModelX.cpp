@@ -99,37 +99,63 @@ void CMesh::Init(CModelX*model){
 		printf("%3d\n", mpVertexIndex[i+2]);
 
 	}
-	model->GetToken();
-	if (strcmp(model->mToken, "MeshNormals") == 0){
+	while (model->mpPointer != '\0'){
 		model->GetToken();
-		mNormalNum = model->GetIntToken();
-		CVector*pNormal = new CVector[mNormalNum];
-		
-		for (int i = 0; i < mNormalNum; i++){
-			pNormal[i].mX = model->GetFloatToken();
-			pNormal[i].mY = model->GetFloatToken();
-			pNormal[i].mZ = model->GetFloatToken();
-		
-		}
-		mNormalNum = model->GetIntToken() * 3;
-		
-		int ni;
-		mpNormal = new CVector[mNormalNum];
-		for (int i = 0; i < mNormalNum; i+=3){
+		if (strchr(model->mToken, '}'))
+			break;
+
+
+		if (strcmp(model->mToken, "MeshNormals") == 0){
 			model->GetToken();
-			ni = model->GetIntToken();
-			mpNormal[i] = pNormal[ni];
+			mNormalNum = model->GetIntToken();
+			CVector*pNormal = new CVector[mNormalNum];
 
-			ni = model->GetIntToken();
-			mpNormal[i + 1] = pNormal[ni];
+			for (int i = 0; i < mNormalNum; i++){
+				pNormal[i].mX = model->GetFloatToken();
+				pNormal[i].mY = model->GetFloatToken();
+				pNormal[i].mZ = model->GetFloatToken();
+			}
 
-			ni = model->GetIntToken();
-			mpNormal[i + 2] = pNormal[ni];
-			
+
+			mNormalNum = model->GetIntToken() * 3;
+
+			int ni;
+			mpNormal = new CVector[mNormalNum];
+			for (int i = 0; i < mNormalNum; i += 3){
+				model->GetToken();
+				ni = model->GetIntToken();
+				mpNormal[i] = pNormal[ni];
+
+				ni = model->GetIntToken();
+				mpNormal[i + 1] = pNormal[ni];
+
+				ni = model->GetIntToken();
+				mpNormal[i + 2] = pNormal[ni];
+
+			}
+			delete[] pNormal;
+			model->GetToken();
+
 		}
-		delete[] pNormal;
-		model->GetToken();
+		else if (strcmp(model->mToken, "MeshMaterialList") == 0){
+			model->GetToken();
 
+			mMaterialNum = model->GetIntToken();
+
+			mMaterialIndexNum = model->GetIntToken();
+			mpMaterialIndex = new int[mMaterialIndexNum];
+			for (int i = 0; i < mMaterialIndexNum; i++){
+				mpMaterialIndex[i] = model->GetIntToken();
+			}
+			for (int i = 0; i < mMaterialNum; i++){
+				model->GetToken();
+				if (strcmp(model->mToken, "Material") == 0){
+					mMaterial.push_back(new CMaterial(model));
+				}
+			}
+			model->GetToken();
+
+		}
 	}
 
 #ifdef _DEBUG
@@ -201,8 +227,12 @@ void CMesh::Render(){
 
 	glVertexPointer(3, GL_FLOAT, 0, mpVertex);
 	glNormalPointer(GL_FLOAT, 0, mpNormal);
+	for (int i = 0; i < mFaceNum; i++){
+		mMaterial[mpMaterialIndex[i]]->Enabled();
+		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, (mpVertexIndex + i * 3));
 
-	glDrawElements(GL_TRIANGLES, 3 * mFaceNum, GL_UNSIGNED_INT, mpVertexIndex);
+	}
+	
 	glDisableClientState(GL_VERTEX_ARRAY);
 	glDisableClientState(GL_NORMAL_ARRAY);
 

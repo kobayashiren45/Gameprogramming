@@ -1,43 +1,74 @@
-﻿2021/06/21 11:37:33 にビルドを開始しました。
+﻿2021/06/22 14:58:03 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\ren20\OneDrive\デスクトップ\Gameprogramming2\ゲームプログラミング実習2021\GameProgramming\GameProgramming.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CSceneGame.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt CBillBoard.cpp CBullet.cpp CCharacter.cpp CCollider.cpp CColliderLine.cpp CColliderMesh.cpp CColliderTriangle.cpp CCollisionManager.cpp CEffect.cpp CEnemy.cpp CEnemy2.cpp CMaterial.cpp CModel.cpp CModelX.cpp CPlayer.cpp CRes.cpp CSceneGame.cpp
+         CRes.cpp
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cres.cpp : fatal error C1041: プログラム データベース 'c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\debug\vc120.idb' を開けません。複数の CL.EXE が同じ .PDB ファイルに書き込む場合、/FS を使用してください。
+         CPlayer.cpp
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cplayer.cpp(141): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 'sprintf' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cplayer.cpp(147): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 'sprintf' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cplayer.cpp(153): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(356) : 'sprintf' の宣言を確認してください。
+         CModelX.cpp
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodelx.cpp(9): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : 'fopen' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodelx.cpp(169): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 'strcpy' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodelx.cpp(218): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+         CModel.cpp
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(28): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : 'fopen' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(49): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(54): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(195) : 'strncpy' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(82): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(211) : 'fopen' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(100): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(122): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(123): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(124): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(138): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(139): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(140): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(304) : 'sscanf' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(186): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(188): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(231): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(243): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmodel.cpp(284): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+         CMaterial.cpp
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmaterial.cpp(22): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 'strcpy' の宣言を確認してください。
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\cmaterial.cpp(46): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\string.h(112) : 'strcpy' の宣言を確認してください。
+         CEnemy2.cpp
+         CEnemy.cpp
+         CEffect.cpp
+         CCollisionManager.cpp
+         CColliderTriangle.cpp
+         CColliderMesh.cpp
+     1>c:\users\ren20\onedrive\デスクトップ\gameprogramming2\ゲームプログラミング実習2021\gameprogramming\ccollidermesh.cpp(21): warning C4018: '<' : signed と unsigned の数値を比較しようとしました。
+         CColliderLine.cpp
+         CCollider.cpp
+         CCharacter.cpp
+         CBullet.cpp
+         コードを生成中...
+     1>cl : コマンド ライン warning D9028: 簡易リビルド時のエラーです、通常のビルドに戻します
+         コンパイル中...
+         CBillBoard.cpp
          CSceneGame.cpp
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ren20\OneDrive\デスクトップ\Gameprogramming2\ゲームプログラミング実習2021\Debug\GameProgramming.exe" /INCREMENTAL /NOLOGO glew32.lib glfw3.lib glfw3dll.lib glut32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ren20\OneDrive\デスクトップ\Gameprogramming2\ゲームプログラミング実習2021\Debug\GameProgramming.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ren20\OneDrive\デスクトップ\Gameprogramming2\ゲームプログラミング実習2021\Debug\GameProgramming.lib" /MACHINE:X86 Debug\CBillBoard.obj
-         Debug\CBullet.obj
-         Debug\CCamera.obj
-         Debug\CCharacter.obj
-         Debug\CCollider.obj
-         Debug\CColliderLine.obj
-         Debug\CColliderMesh.obj
-         Debug\CColliderTriangle.obj
-         Debug\CCollisionManager.obj
-         Debug\CEffect.obj
-         Debug\CEnemy.obj
-         Debug\CEnemy2.obj
-         Debug\CKey.obj
-         Debug\CMaterial.obj
-         Debug\CMatrix.obj
-         Debug\CModel.obj
-         Debug\CModelX.obj
-         Debug\CPlayer.obj
-         Debug\CRes.obj
-         Debug\CSceneGame.obj
-         Debug\CSceneManager.obj
-         Debug\CSound.obj
-         Debug\CTaskManager.obj
-         Debug\CText.obj
-         Debug\CTexture.obj
-         Debug\CTransform.obj
-         Debug\CTriangle.obj
-         Debug\CUtil.obj
-         Debug\CVector.obj
-         Debug\main.obj
-     1>LINK : warning LNK4098: defaultlib 'MSVCRT' は他のライブラリの使用と競合しています。/NODEFAULTLIB:library を使用してください。
-         GameProgramming.vcxproj -> C:\Users\ren20\OneDrive\デスクトップ\Gameprogramming2\ゲームプログラミング実習2021\Debug\GameProgramming.exe
-     1>プロジェクト "C:\Users\ren20\OneDrive\デスクトップ\Gameprogramming2\ゲームプログラミング実習2021\GameProgramming\GameProgramming.vcxproj" (Build ターゲット) のビルドが完了しました。
+         コードを生成中...
+     1>プロジェクト "C:\Users\ren20\OneDrive\デスクトップ\Gameprogramming2\ゲームプログラミング実習2021\GameProgramming\GameProgramming.vcxproj" (Build ターゲット) のビルドが終了しました -- 失敗。
 
-ビルドに成功しました。
+ビルドに失敗しました。
 
-経過時間 00:00:01.75
+経過時間 00:00:04.27

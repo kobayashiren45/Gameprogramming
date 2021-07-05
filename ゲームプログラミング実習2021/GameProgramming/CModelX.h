@@ -5,12 +5,17 @@
 #include "CMatrix.h"
 #include "CVector.h"
 class CModelX;
+class CMaterial;
 #define MODEL_FILE "sample.blend.x"
 #define SAFE_DELETE_ARRAY(a){if(a)delete[]a;a=0;}
 #define ARRAY_SIZE(a)(sizeof(a)/sizeof(a[0]))
 
 class CMesh{
 public:
+	int mMaterialNum;
+	int mMaterialIndexNum;
+	int *mpMaterialIndex;
+	std::vector<CMaterial*>mMaterial;
 	int mVertexNum;
 	CVector*mpVertex;
 	int mFaceNum;
@@ -24,6 +29,9 @@ public:
 		, mpVertexIndex(nullptr)
 		, mNormalNum(0)
 		, mpNormal(nullptr)
+		, mMaterialNum(0)
+		, mMaterialIndexNum(0)
+		, mpMaterialIndex(nullptr)
 
 	{}
 
@@ -31,6 +39,7 @@ public:
 		SAFE_DELETE_ARRAY(mpVertex);
 		SAFE_DELETE_ARRAY(mpVertexIndex);
 		SAFE_DELETE_ARRAY(mpNormal);
+		SAFE_DELETE_ARRAY(mpMaterialIndex);//8
 	}
 	void Init(CModelX*model);
 
